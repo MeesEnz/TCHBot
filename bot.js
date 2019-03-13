@@ -1,14 +1,33 @@
 const Discord = require('discord.js');
-const client = new Discord.Client();
+const bot = new Discord.Client();
 
-client.on('ready', () => {
+bot.on('ready', () => {
     console.log('I am ready!');
 });
 
-client.on('message', message => {
-    if (message.content === 'ping') {
-    	message.reply('pong');
+const prefix = "!"
+
+bot.on('message', message => {
+    if (message.author.bot) return;
+    if (!message.content.startsWith(prefix)) return;
+    
+    let command = message.content.split(" ")[0];
+    command = command.slice(prefix.length);
+    
+    let args = message.content.split(" ").slice(1);
+    
+       
+    if (command === "repeat") {
+        message.channel.sendMessage(args.join(" "));
+    }
+    
+    
+    if (command === "ping")) {
+    	message.channel.sendMessage("Pong!");
   	}
+    
+    
+    
 });
 
-client.login(process.env.BOT_TOKEN);
+bot.login(process.env.BOT_TOKEN);
