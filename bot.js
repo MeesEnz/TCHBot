@@ -1,13 +1,13 @@
 const Discord = require('discord.js');
-const bot = new Discord.Client();
+const client = new Discord.Client();
 
-bot.on('ready', () => {
+client.on('ready', () => {
     console.log('I am ready!');
 });
 
 const prefix = "!"
 
-bot.on('message', message => {
+client.on('message', message => {
     if (message.author.bot) return;
     if (!message.content.startsWith(prefix)) return;
     
@@ -30,4 +30,4 @@ bot.on('message', message => {
     
 });
 
-bot.login(process.env.BOT_TOKEN);
+client.login(process.env.BOT_TOKEN);
