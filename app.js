@@ -89,6 +89,16 @@ client.on('message', message => {
   }*/
 
 
+  if(msg.startsWith(prefix + "speaker")){
+    if (message.member.hasPermission("MANAGE_ROLES")){
+
+      let speaker = message.mentions.members.first();
+      let speakrole = message.guild.roles.find(r => r.name === "Speaker");
+      speaker.addRole(speakrole);
+    }
+  }
+
+
     
 
   // !ban
