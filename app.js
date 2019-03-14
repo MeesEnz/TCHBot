@@ -88,13 +88,18 @@ client.on('message', message => {
     
   }*/
 
-
+  // !speaker (gives people the speaker role. Designed for TCH server)
   if(msg.startsWith(prefix + "speaker")){
     if (message.member.hasPermission("MANAGE_ROLES")){
 
       let speaker = message.mentions.members.first();
       let speakrole = message.guild.roles.find(r => r.name === "Speaker");
       speaker.addRole(speakrole);
+      message.channel.send({embed: {
+        title: "Test",
+        color: 3447003,
+        description: "-"
+      }})
     }
   }
 
@@ -240,7 +245,7 @@ client.on('message', message => {
     timestamp: new Date(),
     footer: {
       icon_url: client.user.avatarURL,
-      text: "© MaasBot"
+      text: "© Coffee Bot"
     } 
       } 
       })
