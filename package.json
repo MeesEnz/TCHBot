@@ -1,13 +1,18 @@
 {
-  "name": "TCHBot",
-  "description": "Test",
+  "name": "TCH Bot",
+  "description": "Discord bot",
   "version": "0.0.0",
-  "main": "bot.js",
+  "main": "app.js",
   "scripts": {
-    "start": "node bot.js"
+    "start": "node app.js"
+  },
+    "engines": {
+    "npm": "5.7.1"
   },
   "dependencies": {
-    "discord.js": "11.4.2",
+    "express": "^4.14.0",
+    "moment": "^2.15.1",
+    "discord.js": "11.1.0",
     "request": "2.81.0"
   }
 }
